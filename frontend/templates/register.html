@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+    {%block content%}
+        <div class="columns">
+            <div class="column is-5"></div>
+            <div class="column is-2">
+                    <form action="" method="POST">
+                        {{form.hidden_tag()}}
+                        <fieldset>
+                            <div class="label mt-3">
+                                {{form.empid.label}}
+                            </div>
+                            <div class="field">
+                                {{form.empid}}
+                            </div>
+                            <div class="label">
+                                {{form.first_name.label}}
+                            </div>
+                            <div class="field">
+                                {{form.first_name}}
+                            </div>
+                            <div class="label">
+                                {{form.last_name.label}}
+                            </div>
+                            <div class="field">
+                                {{form.last_name}}
+                            </div>
+                            <div class="label">
+                                {{form.title.label}}
+                            </div>
+                            <div class="field">
+                                {{form.title}}
+                            </div>
+                            <div class="label">
+                                {{form.email.label}}
+                            </div>
+                            <div class="field">
+                                {{form.email}}
+                            </div>
+                            <div class="label">
+                                {{form.password.label}}
+                            </div>
+                            <div class="field">
+                                {{form.password}}
+                            </div>
+                        </fieldset>
+                        <div class="my-3">
+                            {{form.submitbutton(class="has-text-light has-background-grey-darker is-rounded px-3 py-3")}}
+                        </div>
+                    </form>
+                <a href="{{url_for('login')}}" class="has-text-grey-darker">Have an account already?</a>
+            </div>
+            <div class="column is-5"></div>
+        </div>
+    {%endblock%}
