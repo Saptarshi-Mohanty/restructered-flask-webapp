@@ -4,9 +4,12 @@ from backend.Models.registration import RegistrationForm
 from backend.Models.login import LoginForm
 from backend.Models.search import SearchPage
 from backend.helper.util import pipeline
+from dotenv import load_dotenv
+from backend.core.config import CONFIG
 
+load_dotenv()
 app = Flask(__name__, static_folder=r"C:\Users\SaptarshiMohanty\Flask-webapp\source", template_folder=r"C:\Users\SaptarshiMohanty\Flask-webapp\frontend\templates")
-app.config['SECRET_KEY'] = '3b301329dd4aec7ff92ca50e8e328f52'
+app.config['SECRET_KEY'] = CONFIG
 bcrypt = Bcrypt(app)
 
 def password_hashing(password):
