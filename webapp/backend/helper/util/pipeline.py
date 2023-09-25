@@ -1,4 +1,4 @@
-from backend.helper.connector.connection import stat
+from helper.connector.connection import stat
 
 def get_all():
     r = stat.find()

@@ -1,9 +1,9 @@
 from flask import render_template, flash, redirect, url_for, request
 
-from backend.forms.registration import RegistrationForm
-from backend.forms.login import LoginForm
-from backend.forms.search import SearchPage
-from backend.helper.util import pipeline
+from forms.registration import RegistrationForm
+from forms.login import LoginForm
+from forms.search import SearchPage
+from helper.util import pipeline
 from app import app
 
 @app.route('/')
@@ -12,7 +12,7 @@ def home():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    from backend.core.hash import hash_checking
+    from core.hash import hash_checking
     form = LoginForm()
     if form.validate_on_submit():
         result = pipeline.check_user(form.email.data)
@@ -25,7 +25,7 @@ def login():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-    from backend.core.hash import password_hashing
+    from core.hash import password_hashing
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = password_hashing(form.password.data)
