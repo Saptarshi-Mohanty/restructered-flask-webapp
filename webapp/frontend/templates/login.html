@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+    {%block content%}
+        <div class="columns">
+            <div class="column is-5"></div>
+            <div class="column is-2">
+                    <form action="" method="POST">
+                        {{form.hidden_tag()}}
+                        <fieldset>
+                            <div class="label mt-3">
+                                {{form.email.label}}
+                            </div>
+                            <div class="field">
+                                {{form.email}}
+                            </div>
+                            <div class="label">
+                                {{form.password.label}}
+                            </div>
+                            <div class="field">
+                                {{form.password}}
+                            </div>
+                        </fieldset>
+                        <div class="py-3">
+                            {{form.loginbutton(class="has-text-light has-background-grey-darker is-rounded px-3 py-3")}}
+                        </div>
+                        <a href="{{url_for('register')}}" class="has-text-grey-darker">Do not have an account?</a>
+                        {% with messages = get_flashed_messages()%}
+                            {% if messages %}
+                                {%for message in messages%}
+                                    <div class="is-size-5 has-text-success-dark py-4">
+                                        {{message}}
+                                    </div>
+                                {%endfor%}
+                            {%endif%}
+                        {%endwith%}
+                </form>
+            </div>
+            <div class="column is-5"></div>
+        </div>
+    {%endblock%}

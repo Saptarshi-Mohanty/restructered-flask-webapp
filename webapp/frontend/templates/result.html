@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+    {% block content %}
+        <div class="columns mt-3 is-variable">
+            <div class="column is-5 my-3 mx-3">
+                {%for doc in r:%}
+                    <div class="card my-2">
+                        <header class="card-header-title">
+                            <h1 class="is-size-3 mx-1">{{doc["FirstName"]}} {{doc["LastName"]}} :</h1>
+                            <h1 class="is-size-3 mt-1">{{doc["Title"]}}</h1>
+                        </header>
+                        <div class="card-content">
+                            <p>Employee ID : {{doc["EmpID"]}}</p>
+                            <p>PayZone : {{doc["PayZone"]}}</p>
+                            <p>DepartmentType : {{doc["DepartmentType"]}}</p>
+                            <p>Performance Score : {{doc["Performance Score"]}}</p>
+                            <p>Current Employee Rating : {{doc["Current Employee Rating"]}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-footer-item is-centered">
+                                {{doc["ADEmail"]}}
+                            </p>
+                        </div>
+                    </div>
+                {%endfor%} 
+            </div>
+        </div>
+    {%endblock%}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+    {% block content %}
+        <div class="columns">
+            <div class="column is-5"></div>
+            <div class="column is-2">
+                <form action="" method="POST">
+                    {{form.hidden_tag()}}
+                    <fieldset class="my-3">
+                        <div class="label my-3">
+                            <p>{{form.first_name.label}} (Enter 'all' to see all the records)</p>
+                        </div>
+                        <div class="field my-3">
+                            {{form.first_name(class = "field")}}
+                        </div>
+                        <div class="label has-text-weight-semibold">
+                            {{form.dropdown.label}}
+                        </div>
+                        <div>
+                            {{form.dropdown(class="my-2 px-2 py-2 has-text-light has-background-grey-darker")}}
+                        </div>
+                        <div>
+                            {{form.submitbutton(class="has-text-light has-background-grey-darker is-rounded px-3 py-3")}}
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="column is-5"></div>
+        </div>
+    {%endblock%}

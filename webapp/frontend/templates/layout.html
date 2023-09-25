@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar has-shadow has-background-white is-transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item py-0 px-0">
+                <img src="source/images/business-team-employees-user-icon-free-vector.jpg" alt="Logo" style="max-width: 75px; max-height: 75px;">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="{{url_for('home')}}" class="navbar-item has-text-weight-semibold is-size-5">Employee Database</a>
+            </div>
+            <div class="navbar-end">
+                <a href= "{{url_for('login')}}" class="navbar-item button mx-3 my-5 px-2 is-dark has-text-light">Login</a>
+                <a href= "{{url_for('register')}}" class="navbar-item button mx-3 my-5 px-2 is-dark has-text-light">Sign up</a>
+            </div>
+        </div>
+    </nav>
+    {%block content%}{%endblock%}
+</body>
+</html>
