@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__, static_folder=r"C:\Users\SaptarshiMohanty\Flask-webapp\webapp\source", template_folder=r"C:\Users\SaptarshiMohanty\Flask-webapp\webapp\frontend\templates")
 
-from core.routes import *
+from api.routes.routes import *
 from core.config import *
 
 if __name__ == '__main__':
